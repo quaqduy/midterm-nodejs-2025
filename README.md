@@ -1,30 +1,37 @@
-# Node.js + TypeScript Backend Base
+# NodeJS Testing Demo
 
-Một **base project** cho backend Node.js sử dụng **TypeScript** và **Express**, hỗ trợ cấu hình môi trường, script chạy dev/build, và dễ mở rộng.
-
----
-
-## **Cấu trúc project**
-
-```text
-nodejs-base-backend/
-├─ src/
-│  ├─ app.ts          # Khởi tạo Express app, middleware, routes
-│  ├─ server.ts       # Entry point, lắng nghe port
-│  └─ config/
-│     └─ env.ts       # Cấu hình môi trường
-├─ dist/              # Code JS build ra
-├─ package.json
-├─ tsconfig.json
-└─ .gitignore
-
-
-# Clone project
-git clone <repo-url>
-cd nodejs-base-backend
-
-# Cài dependencies
+## Cài đặt
+```bash
 npm install
 
-# Tạo file .env nếu muốn custom port
-echo "PORT=3000" > .env
+## Chạy
+# Development mode với hot reload
+npm run dev
+
+# Production mode
+npm start
+
+# Build TypeScript
+npm run build
+
+## Tests
+# TẤT CẢ tests
+npm test
+
+# Chỉ chạy UNIT TESTS
+npm test -- tests/app.test.ts
+
+# Chỉ chạy INTEGRATION TESTS
+npm test -- tests/app.integration.test.ts
+
+# Chỉ chạy E2E TESTS (flow test)
+npm test -- tests/e2e-flow.test.ts
+
+# Chạy test với WATCH mode (tự động chạy lại khi thay đổi code)
+npm run test:watch
+
+# Chạy test với COVERAGE report
+npm run test:coverage
+
+# Chạy E2E với Puppeteer (nếu có)
+npm run test:e2e
